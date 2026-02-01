@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Dana ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffd6e5;
+  color: #5a2a3a;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 50px 20px;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+img {
+  width: 85%;
+  max-width: 300px;
+  border-radius: 18px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 14px 30px;
+  margin: 10px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: white;
+  color: #e75480;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flower ending */
+#flowerEnd {
+  font-size: 20px;
+  animation: grow 3s ease forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIRST -->
+<div class="section">
+  <h1>Hello mami 💗</h1>
+</div>
+
+<!-- TEXT + IMAGE -->
+<div class="section">
+  <img src="IMG_1913.jpeg">
+  <p>
+    We’re not in the same place, but you’re still the first person I think of every morning.<br><br>
+    Distance didn’t change what I feel baby — it proved it.<br><br>
+    So even from miles away… will you be my Valentine, Dana?
+  </p>
+</div>
+
+<!-- BUTTONS -->
+<div class="section">
+  <button onclick="yes()">Yes 💖</button>
+  <button onclick="no()">No 🙄</button>
+</div>
+
+<!-- AFTER YES -->
+<div id="afterYes" class="hidden">
+
+  <div class="section">
+    <img src="IMG_1906.jpeg">
+    <p>
+      One day this won’t be a screen my love,<br>
+      you make me the happiest person alive.
+    </p>
+  </div>
+
+  <div class="section">
+    <img src="A92FC5CD-A9BB-4C12-B8D5-BABE6C984D2C.jpeg">
+    <p>
+      That’s the prettiest smile I have ever seen 🙁<br>
+      You really are the prettiest woman alive to me, my love.
+    </p>
+  </div>
+
+  <div class="section">
+    <div id="flowerEnd">🌸</div>
+    <p>
+      This is for you my love 🙄<br>
+      I’m still mad at Karen for not delivering there.
+    </p>
+  </div>
+
+</div>
+
+<script>
+function yes() {
+  document.getElementById("afterYes").classList.remove("hidden");
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
+
+function no() {
+  alert("Wrong answer 😌 try again");
+}
+</script>
+
+</body>
+</html>
