@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Dana ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffd6e5;
+  color: #5a2a3a;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 50px 20px;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+img {
+  width: 85%;
+  max-width: 300px;
+  border-radius: 18px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 14px 30px;
+  margin: 10px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: white;
+  color: #e75480;
+}
+
+#flowerEnd {
+  display: inline-block;
+  font-size: 20px;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 2s ease, opacity 2s ease;
+}
+
+.grow {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+#flowerText {
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+#flowerText.visible {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIRST SECTION (always visible) -->
+<div class="section visible">
+  <h1>Hello mami 💗</h1>
+</div>
+
+<div class="section visible">
+  <img src="IMG_1913.jpeg" alt="Dana image 1">
+  <p>
+    We’re not in the same place, but you’re still the first person I think of every morning.<br><br>
+    Distance didn’t change what I feel baby — it proved it.<br><br>
+    So even from miles away… will you be my Valentine, Dana?
+  </p>
+</div>
+
+<!-- BUTTONS -->
+<div class="section visible">
+  <button onclick="yes()">Yes 💖</button>
+  <button onclick="no()">No 🙄</button>
+</div>
+
+<!-- HIDDEN SECTIONS (appear after Yes) -->
+<div id="afterYes" class="hidden">
+
+  <div class="section" id="sec2">
+    <img src="IMG_1906.jpeg" alt="Dana image 2">
+    <p>
+      One day this won’t be a screen my love,<br>
+      you make me the happiest person alive.
+    </p>
+  </div>
+
+  <div class="section" id="sec3">
+    <img src="A92FC5CD-A9BB-4C12-B8D5-BABE6C984D2C.jpeg" alt="Dana image 3">
+    <p>
+      That’s the prettiest smile I have ever seen 🙁<br>
+      You really are the prettiest woman alive to me, my love.
+    </p>
+  </div>
+
+  <div class="section" id="flowerSection">
+    <div id="flowerEnd">🌸</div>
+    <p id="flowerText">
+      This is for you my love 🙄<br>
+      I’m still mad at Karen for not delivering there.
+    </p>
+  </div>
+
+</div>
+
+<script>
+function yes() {
+  // Show hidden sections
+  const afterYes = document.getElementById("afterYes");
+  afterYes.classList.remove("hidden");
+
+  // Animate sections one by one
+  setTimeout(() => {
+    document.getElementById("sec2").classList.add("visible");
+  }, 200);
+
+  setTimeout(() => {
+    document.getElementById("sec3").classList.add("visible");
+  }, 600);
+
+  setTimeout(() => {
+    // Flower grow animation
+    document.getElementById("flowerEnd").classList.add("grow");
+    document.getElementById("flowerText").classList.add("visible");
+  }, 1000);
+
+  // Scroll smoothly to bottom
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
+
+function no() {
+  alert("Wrong answer 😌 try again");
+}
+</script>
+
+</body>
+</html>
